@@ -1,5 +1,8 @@
 # CIS-550
 CIS 550 Final Project
+Guideline
+https://drive.google.com/file/d/16239U_4IrQs-ehEs0b2BC7IlM8uCQtW3/view?usp=sharing
+
 
 Proposal
 https://docs.google.com/document/d/1rg1kX6odIEgIADPwLvdaXiprOz2ZZF5Y-F6iAJLeVzs/edit?usp=sharing
