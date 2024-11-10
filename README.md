@@ -1,15 +1,7 @@
 # CIS-550
-CIS 550 Final Project
-Guideline
-https://drive.google.com/file/d/16239U_4IrQs-ehEs0b2BC7IlM8uCQtW3/view?usp=sharing
+This is a website designed by Haorui, Yiting, Kris and Jason. 
+We want to make a music-focused search engine that uses the songs_df and track_df datasets, to create a fun website for music discovery. Users can search for songs by name, genre, or attributes like popularity and danceability. The site will feature intuitive filters, allowing users to refine their searches according to their preferences, such as finding upbeat dance tracks or soothing acoustic melodies. 
 
---------------------------------------------------------------------------------------------------------
-
-Proposal
-https://docs.google.com/document/d/1rg1kX6odIEgIADPwLvdaXiprOz2ZZF5Y-F6iAJLeVzs/edit?usp=sharing
-
-Outline
-https://docs.google.com/document/d/1cPXAP4E1OkMmXuQ4VAqAInXgU4M6_nkW7xfAulTHzwY/edit?tab=t.0
-
-Pre-processing
-https://colab.research.google.com/drive/1yO2iM12m74z8fGatJcuoJVPfy7QBgvzr?usp=sharing
+There are several directories in our repo. 
+Documents: including every documents related to this projects. (Project outline as well as SQL query PDF version).
+...
