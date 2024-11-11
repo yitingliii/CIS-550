@@ -5,6 +5,6 @@ We want to make a music-focused search engine that uses the songs_df and track_d
 
 
 There are several directories in our repo. 
-- Documents: including every documents related to this projects. (Project outline as well as SQL query PDF version).
+- Documents: including every documents related to this projects. (Project outline, SQL query PDF version, ER diagram).
 - server: copied from class files as starter code
 - client: copied from class files as starter code
