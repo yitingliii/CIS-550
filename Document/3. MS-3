@@ -40,8 +40,9 @@ speechiness FLOAT
 
 
 CREATE TABLE bp_release_media (
-  release_id INT PRIMARY KEY,
+  release_id INT,
   release_img_uuid VARCHAR(255) NOT NULL,
+  PRIMARY KEY (release_id, release_img_uuid)
   FOREIGN KEY (release_id) REFERENCES bp_release(release_id) ON DELETE CASCADE
 );
 
@@ -49,7 +50,7 @@ CREATE TABLE bp_release_media (
 CREATE TABLE bp_artist_release (
 artist_id INT,
 release_id INT,
-PRIMARY KEY (artist_id, release_id),
+PRIMARY KEY (artist_id, release_id)
 );
 -- It does not have Fks, due to 2 reasons: (1) This is separate table we have. (2) It CAN NOT directly have foreign keys, because there are artist_id OR release_id not in bp_release or bp_artist. 
 -- AS WE WANT TO KEEP ALL OF INFO about this, we decided NOT FURTHER to DELETE tuples, and will use JOIN ON to find the matching information
@@ -67,28 +68,31 @@ release_id INT
 
 
 CREATE TABLE bp_track_genre (
-   track_id INT,
-   genre_id INT,
-   PRIMARY KEY (track_id, genre_id),
-   FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE,
-   FOREIGN KEY (genre_id) REFERENCES bp_genre(genre_id) ON DELETE CASCADE
+  track_id INT,
+  genre_id INT,
+  PRIMARY KEY (track_id, genre_id),
+  FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE,
+  FOREIGN KEY (genre_id) REFERENCES bp_genre(genre_id) ON DELETE CASCADE
 );
+
+
 
 
 CREATE TABLE bp_track_audio_features (
-   track_id INT,
-   isrc CHAR(12),
-   PRIMARY KEY (track_id, isrc),
-   FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE,
-   FOREIGN KEY (isrc) REFERENCES audio_features(isrc) ON DELETE CASCADE
+  track_id INT,
+  isrc CHAR(12),
+  PRIMARY KEY (track_id, isrc),
+  FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE,
+  FOREIGN KEY (isrc) REFERENCES audio_features(isrc) ON DELETE CASCADE
 );
+
+
 
 
 CREATE TABLE bp_release_track (
-   release_id INT,
-   track_id INT,
-   PRIMARY KEY (release_id, track_id),
-   FOREIGN KEY (release_id) REFERENCES bp_release(release_id) ON DELETE CASCADE,
-   FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE
+  release_id INT,
+  track_id INT,
+  PRIMARY KEY (release_id, track_id),
+  FOREIGN KEY (release_id) REFERENCES bp_release(release_id) ON DELETE CASCADE,
+  FOREIGN KEY (track_id) REFERENCES bp_track(track_id) ON DELETE CASCADE
 );
-
