@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Fondamento:ital@0;1&family=Rubik+Scribble&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Galada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
 
 h1{
 	color: #747953;
@@ -19,6 +20,56 @@ h3{
 	color: #415562;
 	font-family: "Edu NSW ACT Foundation", cursive;
 }
+#navbar, #navbar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navbar {
+	display: flex;
+	justify-content: center;
+	background-color: #fefbd8;
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	font-family: 'Glass Antiqua', cursive;
+}
 
+#navbar li {
+	background-color: #fefbd8;
+	width: 353px; 
+	text-align: center;
+	position: relative;
+	padding: 10px; 
+	cursor: pointer; 
+}
 
+#navbar li:hover {
+	background-color: #F4B266;
+	color: #3E2E28;
+}
+
+#navbar a {
+	text-decoration: none;
+	color: #6F5449; 
+	display: block;
+	height: 100%; 
+	line-height: 50px;
+}
+
+#navbar ul {
+	display: flex; 
+	position: static; 
+}
+
+#page-wrapper {	
+	display: flex;
+	padding: 10px;
+	background-color: #FFEBC2;
+	width: 1000px;
+	height: 100vh; 
+	margin: auto; 
+}
 
