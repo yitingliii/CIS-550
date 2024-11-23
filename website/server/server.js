@@ -12,6 +12,10 @@ app.use(cors({
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/genres', routes.getAllGenres);
 app.get('/tracks/genre/:genre', routes.getTracksByGenre);
 
-
+const PORT = 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

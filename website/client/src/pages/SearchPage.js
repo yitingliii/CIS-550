@@ -1,13 +1,33 @@
-import React, { useState } from "react";
-// import NavBar from "../components/navbar"; 
+import React, { useState, useEffect } from "react";
 import "../style/SearchPage.css";
 import "../index.css";
 
 export default function SearchSong() {
-  const [term, setTerm] = useState("");
+  const [genres, setGenres] = useState([]); 
+  const [selectedGenre, setSelectedGenre] = useState(""); 
   const [songs, setSongs] = useState([]);
   const [numResults, setNumResults] = useState(0);
   const [error, setError] = useState("");
+  const [term, setTerm] = useState(""); 
+
+  useEffect(() => {
+    const fetchGenres = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/genres"); // API endpoint
+        if (!response.ok) {
+          throw new Error("Failed to fetch genres");
+        }
+        const data = await response.json();
+        setGenres(data);
+        setSelectedGenre(data[0]?.Genre || ""); // Default to the first genre
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load genres");
+      }
+    };
+
+    fetchGenres();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,17 +35,16 @@ export default function SearchSong() {
     setSongs([]);
     setNumResults(0);
 
-    if (!term) {
-      setError("Please enter a genre name.");
+    if (!selectedGenre) {
+      setError("Please select a genre.");
       return;
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/tracks/genre/${term}`);
+      const response = await fetch(`http://localhost:8080/tracks/genre/${selectedGenre}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch data. Please check the genre name.");
+        throw new Error("Failed to fetch songs");
       }
-
       const data = await response.json();
       setSongs(data);
       setNumResults(data.length);
@@ -35,27 +54,74 @@ export default function SearchSong() {
     }
   };
 
+
   return (
     <div>
-      <div id = 'navbar'>
+      {/* Navigation Bar */}
+      <div id="navbar">
         <ul>
-          <li><a href='http://localhost:3000/'>HomePage</a></li>
+          <li><a href="http://localhost:3000/">HomePage</a></li>
           <li>Sound Lab</li>
           <li>Genre</li>
           <li>Collaboration</li>
         </ul>
-      </div> 
+      </div>
 
+      {/* Page Wrapper */}
       <div id="page-wrapper">
-		
-        <p>page</p>
-		
+          {/* Search Form */}
+          <form id="search-form" onSubmit={handleSubmit}>
+            <label htmlFor="genre-select"></label>
 
+            {/* Dropdown for Genre Selection */}
+            <select
+              id="genre-select"
+              value={selectedGenre}
+              onChange={(e) => setSelectedGenre(e.target.value)}
+            >
+              {genres.map((genre) => (
+                <option key={genre.ID} value={genre.Genre}>
+                  {genre.Genre}
+                </option>
+              ))}
+            </select>
 
+            {/* Input for Results Limit */}
+            <input
+              type="number"
+              placeholder="5 results"
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+            />
 
+            {/* Search Button */}
+            <button type="submit">Search</button>
+          </form>
 
+          {/* Error Message */}
+          {error && <p className="error">{error}</p>}
 
-	    </div>
-    </div>
+          {/* Results Message */}
+          {numResults > 0 && (
+            <p>
+              Found <span id="num-results">{numResults}</span> result(s).
+            </p>
+          )}
+
+          {/* Search Results */}
+          <div id="search-results">
+              {songs.map((song) => (
+                <div key={song.track_id} className="song-item">
+                  <h3>{song.title}</h3>
+                  <p>Release Date: {song.release_date}</p>
+                  <a href={song.track_url} target="_blank" rel="noopener noreferrer">
+                    Listen
+                  </a>
+                </div>
+              ))}
+            </div>
+          
+        </div>
+      </div>
   );
 }
