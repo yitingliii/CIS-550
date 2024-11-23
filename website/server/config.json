@@ -1,0 +1,9 @@
+{
+  "rds_host": "database-2.cfiaw70czrwe.us-east-1.rds.amazonaws.com",
+  "rds_port": "5432",
+  "rds_user": "project_550",
+  "rds_password": "550project+2024",
+  "rds_db": "Song_DB",
+  "server_host": "localhost",
+  "server_port": "8080"
+}
