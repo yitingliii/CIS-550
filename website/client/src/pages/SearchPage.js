@@ -109,7 +109,7 @@ export default function SearchSong() {
           )}
 
           {/* Search Results */}
-          <div id="search-results">
+          {/* <div id="search-results">
               {songs.map((song) => (
                 <div key={song.track_id} className="song-item">
                   <h3>{song.title}</h3>
@@ -120,7 +120,45 @@ export default function SearchSong() {
                 </div>
               ))}
             </div>
-          
+            <div id="search-results">
+              <table id="results-table">
+                <thead>
+                  <tr>
+                    <th>Track ID</th>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Release Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {songs.length > 0 ? (
+                    songs.map((song) => (
+                      <tr key={song.track_id}>
+                        <td>{song.track_id}</td>
+                        <td>{song.title}</td>
+                        <td>
+                          <a
+                            href={song.track_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Listen
+                          </a>
+                        </td>
+                        <td>{song.release_date}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" style={{ textAlign: "center" }}>
+                        No results found. Try a different genre or limit.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div> */}
+
         </div>
       </div>
   );
