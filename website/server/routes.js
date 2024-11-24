@@ -33,7 +33,7 @@ function getAllAlbums(req, res) {
     var query = `
     SELECT release_id AS ID, release_title AS Album, release_url AS URL
     FROM bp_release
-    ORDER BY Album ASC;
+    LIMIT 100;
   `;
   console.log('Executing query:', query);
     connection.query(query, function (err, rows, fields) {
@@ -52,7 +52,8 @@ function getAllArtists(req, res) {
     var query = `
     SELECT artist_id AS ID, artist_name AS Artist, artist_url AS URL
     FROM bp_artist
-    ORDER BY Artist ASC;
+    ORDER BY Artist ASC
+    LIMIT 100;
   `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -101,26 +102,33 @@ function getAllGenres(req, res) {
 
 // Route 5: Get tracks given specific genre
 function getTracksByGenre(req, res) {
-    const genre = req.params.genre;
+  const genre = req.params.genre; // Extract the genre from the route parameter
 
-    var query = `
-    SELECT bt.track_id, bt.title, bt.track_url, bt.release_date
-    FROM bp_track bt
-    JOIN bp_track_genre btg ON bt.track_id = btg.track_id
-    JOIN bp_genre bg ON btg.genre_id = bg.genre_id
-    WHERE bg.genre_name = '${genre}'
-    ORDER BY bt.title;
-  `;
+  const query = `
+  SELECT bt.track_id, bt.title, bt.track_url, bt.release_date
+  FROM bp_track bt
+  JOIN bp_track_genre btg ON bt.track_id = btg.track_id
+  JOIN bp_genre bg ON btg.genre_id = bg.genre_id
+  WHERE bg.genre_name = $1
+  ORDER BY bt.title
+  Limit 100;
+`;
 
-    connection.query(query, [genre], function (err, rows, fields) {
-        if (err) {
-            console.error('Error executing query:', err);
-            res.status(500).send('Error retrieving tracks for the specified genre');
-        } else {
-            res.json(rows);
-        }
-    });
+  console.log('Executing query with genre:', genre);
+
+  connection.query(query, [genre], function (err, rows) {
+      if (err) {
+          console.error('Error executing query:', err);
+          res.status(500).send('Error retrieving tracks for the specified genre');
+      } else if (rows.length === 0) {
+          res.status(404).send(`No tracks found for genre: ${genre}`); 
+      } else {
+          res.json(rows); 
+      }
+  });
 }
+
+
 
 // Route 6: Get Genres Ordered by IDs
 function getGenresByID(req, res) {
@@ -145,7 +153,8 @@ function getReleasesByID(req, res) {
     var query = `
     SELECT DISTINCT release_id AS ID, release_title AS Title
     FROM bp_release
-    ORDER BY release_id ASC;
+    ORDER BY release_id ASC
+    Limit 100;
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -163,7 +172,8 @@ function getTracksByID(req, res) {
     var query = `
     SELECT DISTINCT track_id AS ID, title AS Title
     FROM bp_track
-    ORDER BY track_id ASC;
+    ORDER BY track_id ASC
+    LIMIT 100;
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -271,7 +281,8 @@ function getTopAudioFeatureProfiles(req, res) {
     SELECT genre_name, valence, energy, danceability, profile_count
     FROM RankedProfiles
     WHERE rank <= 3
-    ORDER BY genre_name, profile_count DESC;
+    ORDER BY genre_name, profile_count DESC
+    Limit 10;
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -316,7 +327,8 @@ function rankTracksByLoudness(req, res) {
     FROM bp_track bt
     JOIN bp_genre bg ON bt.genre_id = bg.genre_id
     JOIN audio_features af ON bt.isrc = af.isrc
-    WHERE af.loudness IS NOT NULL;
+    WHERE af.loudness IS NOT NULL
+    LIMIT 10;
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -343,7 +355,8 @@ function getTracksAboveAverageDanceability(req, res) {
     JOIN bp_genre bg ON bt.genre_id = bg.genre_id
     JOIN audio_features af ON bt.isrc = af.isrc
     JOIN avg_danceability_genre adg ON bt.genre_id = adg.genre_id
-    WHERE af.danceability > avg_danceability;
+    WHERE af.danceability > avg_danceability
+    LIMIT 10;
     `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -366,18 +379,19 @@ function getSongsOrderedByReleaseDate(req, res) {
     FROM all_tracks a
     JOIN bp_release r ON a.release_id = r.release_id
     JOIN bp_genre g ON a.genre_id = g.genre_id
-    ORDER BY a.release_date DESC;
+    ORDER BY a.release_date DESC
+    LIMIT 10;
     `;
 
-    console.log('Executing query:', query); // Debugging log
+    console.log('Executing query:', query); 
     connection.query(query, function (err, rows, fields) {
         if (err) {
-            console.error('Error executing query:', err.message); // Improved error handling
+            console.error('Error executing query:', err.message); 
             res.status(500).json({ error: 'Failed to retrieve songs ordered by release date', details: err.message });
         } else if (rows.length === 0) {
             res.status(404).send('No songs found');
         } else {
-            console.log('Rows returned:', rows.length); // Debugging log
+            console.log('Rows returned:', rows.length); 
             res.json(rows);
         }
     });
