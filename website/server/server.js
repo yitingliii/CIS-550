@@ -14,8 +14,9 @@ app.use(cors({
 
 app.get('/genres', routes.getAllGenres);
 app.get('/tracks/genre/:genre', routes.getTracksByGenre);
+app.get('/albums', getAllAlbums);
 
-const PORT = 8080;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
