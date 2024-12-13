@@ -17,7 +17,7 @@ export default function HomePage() {
         </div>
         </Link>
   
-          <a href="/search_page" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="/genre" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="options" id="search">
               <h2>Genre Explorer</h2>
             </div>

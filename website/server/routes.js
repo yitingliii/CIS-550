@@ -52,7 +52,6 @@ function getAllArtists(req, res) {
     var query = `
     SELECT artist_id AS ID, artist_name AS Artist, artist_url AS URL
     FROM bp_artist
-    ORDER BY Artist ASC
     LIMIT 100;
   `;
     connection.query(query, function (err, rows, fields) {
@@ -88,7 +87,7 @@ function getAllGenres(req, res) {
     var query = `
     SELECT genre_name AS Genre, genre_id AS ID
     FROM bp_genre
-    ORDER BY genre_name ASC;
+    ORDER BY ID;
   `;
     connection.query(query, function (err, rows, fields) {
         if (err) {

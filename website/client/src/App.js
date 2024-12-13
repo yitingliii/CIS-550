@@ -8,6 +8,7 @@ import {
 
 import HomePage from './pages/HomePage'; 
 import SearchPage from "./pages/SearchPage";
+import GenrePage from "./pages/GenrePage"
 
 export default function App() {
 
@@ -21,6 +22,12 @@ export default function App() {
 							<HomePage />
 						)} />
 						<Route path="/search" component={SearchPage} />
+					<Route exact
+						path="/"
+						render={() => (
+							<HomePage />
+						)} />
+						<Route path="/genre" component={GenrePage} />
 					{/* <Route exact
 						path="/dashboard"
 						render={() => (

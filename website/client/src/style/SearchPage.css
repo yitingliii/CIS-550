@@ -103,3 +103,58 @@
 
 
   
+
+#search-form select {
+  height: 40px; 
+  padding: 8px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: #fff; 
+}
+
+
+#search-form select:not(:last-child), #search-form button {
+  margin-right: 10px; 
+}
+
+#page-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.error-message {
+  color: red;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+#page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Add space between sections */
+}
+
+section {
+  width: 100%; /* Full width of the page */
+  max-width: 600px; /* Optional: Limit the maximum width */
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add space between form elements */
+  align-items: center; /* Center the form elements */
+}
+
+select,
+button {
+  width: 100%; /* Full width of the form elements */
+  max-width: 300px; /* Optional: Limit the maximum width */
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 16px; /* Make text larger for better readability */
+}
