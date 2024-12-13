@@ -10,7 +10,7 @@ app.use(cors({
 
 //  Add more routes.
 app.get('/albums', routes.getAllAlbums); // 
-app.get('/artists', routes.getAllArtists); // 
+app.get('/artists', routes.getAllArtists); // 写了
 app.get('/audio-features', routes.getAllAudioFeatures);
 app.get('/genres', routes.getAllGenres); // 写了
 app.get('/genres/:genre/tracks', routes.getTracksByGenre); // 写了没成功
@@ -32,7 +32,7 @@ app.get('/tracks/ordered-by-release-date', routes.getSongsOrderedByReleaseDate);
 
 
 
-app.get('/artists/:artistName/tracks', routes.getTracksByArtist); 
+app.get('/artists/:artistName/tracks', routes.getTracksByArtist); // 写了
 //app.get('/artists/:artistName/total-tracks', routes.getTotalTracksByArtist); 
 //app.get('/artists/:artistName/top-genres', routes.getTopGenresByTracksForArtist); 
 
