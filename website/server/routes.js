@@ -52,7 +52,7 @@ function getAllArtists(req, res) {
     var query = `
     SELECT artist_id AS ID, artist_name AS Artist, artist_url AS URL
     FROM bp_artist
-    LIMIT 100;
+  ;
   `;
     connection.query(query, function (err, rows, fields) {
         if (err) {
@@ -85,9 +85,10 @@ function getAllAudioFeatures(req, res) {
 // Route 4: Get all genres
 function getAllGenres(req, res) {
     var query = `
-    SELECT genre_name AS Genre, genre_id AS ID
-    FROM bp_genre
-    ORDER BY ID;
+    SELECT distinct bg.genre_name
+    FROM bp_track bt
+    JOIN bp_track_genre btg ON bt.track_id = btg.track_id
+    JOIN bp_genre bg ON btg.genre_id = bg.genre_id;
   `;
     connection.query(query, function (err, rows, fields) {
         if (err) {

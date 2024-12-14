@@ -135,21 +135,22 @@ export default function SearchSong() {
         <section id="search-genre">
           <h2>Search Songs by Genre</h2>
           <form onSubmit={handleSearchByGenre}>
-            <select
-              id="genre-select"
-              value={selectedGenre}
-              onChange={(e) => setSelectedGenre(e.target.value)}
-            >
-              <option value="" disabled>
-                Select a Genre
-              </option>
-              {Array.isArray(genres) &&
-                genres.map((genre) => (
-                  <option key={genre.id} value={genre.genre}>
-                    {genre.genre}
-                  </option>
-                ))}
-            </select>
+          <select
+            id="genre-select"
+            value={selectedGenre}
+            onChange={(e) => setSelectedGenre(e.target.value)}
+          >
+            <option value="" disabled>
+              Select a Genre
+            </option>
+            {Array.isArray(genres) &&
+              genres.map((genre, index) => (
+                <option key={index} value={genre.genre_name}>
+                  {genre.genre_name}
+                </option>
+              ))}
+          </select>
+
 
             <select
               id="genre-results-limit"
