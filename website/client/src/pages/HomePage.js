@@ -29,14 +29,16 @@ export default function HomePage() {
         </div>
   
         <div id="column_two">
-          <a href="/readlist_page" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="/sound" style={{ textDecoration: 'none', color: 'inherit' }}>
             <div className="options">
               <h2>The Sound Lab</h2>
             </div>
           </a>
   
           <div className="options" id="tbd">
+          <a href="/collaboration" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h2>Collaborative Creations</h2>
+          </a>
           </div>
         </div>
 

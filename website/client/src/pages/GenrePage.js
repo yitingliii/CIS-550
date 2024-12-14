@@ -126,9 +126,9 @@ export default function SearchSong() {
       <div id="navbar">
         <ul>
           <li><a href="http://localhost:3000/">HomePage</a></li>
-          <li>Sound Lab</li>
-          <li>Genre</li>
-          <li>Collaboration</li>
+          <li><a href="http://localhost:3000/search">Search Page</a></li>
+          <li><a href="http://localhost:3000/sound">Sound Lab</a></li>
+          <li><a href="http://localhost:3000/collaboration">Collaboration</a></li>
         </ul>
       </div>
 
