@@ -1,0 +1,176 @@
+/* Scoped Styles for Collaborative Releases Page */
+#collaborative-releases-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6; /* Light gray background */
+  color: #333; /* Dark gray text */
+  min-height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center align content */
+}
+
+/* Page Heading */
+#collaborative-releases-page h1 {
+  text-align: center;
+  font-size: 3rem; /* Large font size */
+  color: #2c3e50; /* Dark blue-gray */
+  text-transform: uppercase; /* Uppercase text */
+  margin-bottom: 40px; /* Spacing below heading */
+  padding-bottom: 10px; /* Spacing below text */
+  border-bottom: 4px solid #83aed2; /* Aqua green underline */
+  letter-spacing: 1.5px; /* Spacing between letters */
+  font-family: 'Segoe UI', Tahoma, sans-serif; /* Font styling */
+}
+
+/* Filters Section */
+#filters {
+  display: flex;
+  gap: 20px; /* Spacing between filter elements */
+  justify-content: center; /* Center align filter elements */
+  margin-bottom: 30px; /* Spacing below filters */
+}
+
+#filters input[type="text"],
+#filters input[type="number"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box;
+  text-align: center; /* Center align text inside inputs */
+}
+
+#filters input[type="number"] {
+  max-width: 200px; /* Restrict width for numbers */
+}
+
+/* Table Container */
+#table-container {
+  width: 100%; /* Full width container */
+  overflow-x: auto; /* Allow horizontal scrolling for overflow */
+  margin-top: 20px; /* Spacing above the table */
+}
+
+#table-container table {
+  width: 100%;
+  border-collapse: collapse; /* Remove space between cells */
+}
+
+#table-container th,
+#table-container td {
+  text-align: center; /* Center-align text in headers and cells */
+  padding: 12px 15px; /* Padding inside cells */
+  border-bottom: 1px solid #ddd; /* Row separators */
+}
+
+#table-container th {
+  background-color: #50749f; /* Dark blue-gray for headers */
+  color: white; /* White text */
+  font-weight: bold; /* Bold headers */
+  text-align: center; /* Center-align header text */
+}
+
+#table-container td {
+  background-color: #ffffff; /* White background for data cells */
+  text-align: center; /* Center-align cell text */
+}
+
+#table-container tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Favorites Section */
+#favorites-section {
+  margin-top: 30px; /* Spacing above favorites section */
+  width: 100%; /* Full width container */
+  text-align: center; /* Center-align all text inside the section */
+}
+
+#favorites-section table {
+  width: 100%;
+  border-collapse: collapse; /* Remove space between cells */
+  margin-top: 20px; /* Spacing above the table */
+}
+
+#favorites-section th,
+#favorites-section td {
+  text-align: center; /* Center-align text in headers and cells */
+  padding: 12px 15px; /* Padding inside cells */
+  border-bottom: 1px solid #ddd; /* Row separators */
+}
+
+#favorites-section th {
+  background-color: #679785; /* Greenish header background */
+  color: white; /* White text */
+  font-weight: bold; /* Bold headers */
+  text-align: center; /* Center-align header text */
+}
+
+#favorites-section td {
+  background-color: #ffffff; /* White background for data cells */
+  text-align: center; /* Center-align cell text */
+}
+
+#favorites-section tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center pagination buttons */
+  margin-top: 20px; /* Spacing above pagination */
+}
+
+.pagination-controls button {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin: 0 5px;
+  background-color: #50749f; /* Button background */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 3px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center-align button text */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.pagination-controls button:hover {
+  background-color: #3a5b78; /* Darker blue on hover */
+}
+
+.pagination-controls span {
+  font-size: 14px;
+  margin: 0 10px; /* Spacing between pagination elements */
+  text-align: center; /* Center-align pagination text */
+}
+
+/* Media Queries for Small Screens */
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  #collaborative-releases-page {
+    padding: 10px; /* Reduce padding */
+  }
+
+  #filters {
+    flex-direction: column; /* Stack filters vertically */
+    gap: 10px; /* Reduce gap between filters */
+  }
+
+  #table-container table {
+    font-size: 14px; /* Smaller font for table text */
+  }
+
+  #favorites-section table {
+    font-size: 14px; /* Smaller font for table text in favorites */
+  }
+
+  .pagination-controls {
+    flex-direction: column; /* Stack pagination controls */
+    gap: 5px; /* Reduce spacing */
+  }
+}

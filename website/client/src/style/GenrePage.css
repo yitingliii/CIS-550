@@ -1,0 +1,305 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6e3;
+    color: #333;
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #f9dd94;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+    background-color: #e8c481;
+    border-radius: 5px;
+}
+
+/* Page Wrapper */
+#page-wrapper {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Top Genres Section */
+#top-genres {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #f7e8d5;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#top-genres h2 {
+    font-size: 2rem;
+    color: #5d3a00;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+}
+
+#artist-input {
+    width: 80%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#artist-input:focus {
+    border-color: #e8c481;
+    outline: none;
+    box-shadow: 0 0 8px rgba(232, 196, 129, 0.5);
+}
+
+#artist-form-buttons button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5d3a00;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#artist-form-buttons button:hover {
+    background-color: #8b5e24;
+    transform: scale(1.05);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.loading-message {
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Top Genres List */
+#top-genres ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#top-genres li {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1e90ff;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+#top-genres li:hover {
+    color: #8b5e24;
+    transform: scale(1.05);
+}
+
+/* Genre Tracks Section */
+#genre-tracks {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff8e7;
+    border: 2px dashed #ff7f50;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#genre-tracks h3 {
+    font-size: 1.8rem;
+    color: #ff4500;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive;
+}
+
+#genre-tracks ul {
+    list-style: none;
+    padding: 0;
+}
+
+#genre-tracks li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#genre-tracks a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#genre-tracks a:hover {
+    color: #ff6347;
+}
+
+/* Genre of the Day Section */
+#genre-of-the-day {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #ffeedd;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#genre-of-the-day h2 {
+    font-size: 2rem;
+    color: #ff4500;
+    margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.genre-form-group {
+    margin-bottom: 15px;
+}
+
+#genre-select, #num-songs-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#genre-select:focus,
+#num-songs-input:focus {
+    border-color: #ff7f50;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 127, 80, 0.5);
+}
+
+.fetch-songs-button {
+    display: block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4500;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 15px auto;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.fetch-songs-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Random Songs List */
+#random-songs-list {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fff8e7;
+    border: 2px dashed #ff7f50;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.random-songs-message {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    color: #ff4500;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.song-item {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.song-link {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.song-link:hover {
+    color: #ff6347;
+}
+
+/* Back to Main Menu Button */
+#back-menu-wrapper {
+    margin-top: 20px;
+}
+
+#back-menu-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5d3a00;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#back-menu-button:hover {
+    background-color: #8b5e24;
+    transform: scale(1.1);
+}
+
+/* Add subtle animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

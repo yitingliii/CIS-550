@@ -1,160 +1,225 @@
 #title {
-    background: #EAE1D7;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  #content img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  #footer {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .row {
-    margin-bottom: 20px;
-  }
+  background: #EAE1D7;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#content img {
+  max-width: 100%;
+  height: auto;
+}
+
+#footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 20px;
+}
 
 #search-form {
 
-  align-items: center; 
-  justify-content: center; 
-  gap: 10px; 
+align-items: center; 
+justify-content: center; 
+gap: 10px; 
 }
 
 
 #genre-select {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 200px;
+padding: 10px;
+border-radius: 4px;
+border: 1px solid #ccc;
+width: 200px;
 }
 
 
 #search-form input {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 100px;
+padding: 10px;
+border-radius: 4px;
+border: 1px solid #ccc;
+width: 100px;
 }
 
 
 #search-form button {
-  padding: 10px 20px;
-  border-radius: 4px;
-  border: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  width: 100px;
+padding: 10px 20px;
+border-radius: 4px;
+border: none;
+background-color: #333;
+color: white;
+cursor: pointer;
+width: 100px;
 }
 
 #search-form button:hover {
-  background-color: #555; 
+background-color: #555; 
 }
 
 
 .error {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+color: red;
+font-size: 14px;
+margin-top: 10px;
 }
 
 
 #search-results {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 .song-item {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+background-color: #fff;
 }
 
 #results-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
 }
 
 #results-table th, #results-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
+border: 1px solid #ccc;
+padding: 10px;
+text-align: left;
 }
 
 #results-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
+background-color: #f4f4f4;
+font-weight: bold;
 }
 
 #results-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+background-color: #f9f9f9;
 }
 
 #results-table tr:hover {
-  background-color: #f1f1f1;
+background-color: #f1f1f1;
 }
 
 
-  
+
 
 #search-form select {
-  height: 40px; 
-  padding: 8px; 
-  font-size: 16px; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  background-color: #fff; 
+height: 40px; 
+padding: 8px; 
+font-size: 16px; 
+border: 1px solid #ccc; 
+border-radius: 5px; 
+background-color: #fff; 
 }
 
 
 #search-form select:not(:last-child), #search-form button {
-  margin-right: 10px; 
+margin-right: 10px; 
 }
 
 #page-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
+display: flex;
+align-items: center;
+gap: 10px; 
 }
 
 .error-message {
-  color: red;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
+color: red;
+margin: 0;
+padding: 0;
+font-size: 14px;
 }
 
 #page-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Add space between sections */
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px; /* Add space between sections */
 }
 
 section {
-  width: 100%; /* Full width of the page */
-  max-width: 600px; /* Optional: Limit the maximum width */
-  text-align: center;
+width: 100%; /* Full width of the page */
+max-width: 600px; /* Optional: Limit the maximum width */
+text-align: center;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Add space between form elements */
-  align-items: center; /* Center the form elements */
+display: flex;
+flex-direction: column;
+gap: 10px; /* Add space between form elements */
+align-items: center; /* Center the form elements */
 }
 
 select,
 button {
-  width: 100%; /* Full width of the form elements */
-  max-width: 300px; /* Optional: Limit the maximum width */
-  padding: 10px; /* Add padding for better spacing */
-  font-size: 16px; /* Make text larger for better readability */
+width: 100%; /* Full width of the form elements */
+max-width: 300px; /* Optional: Limit the maximum width */
+padding: 10px; /* Add padding for better spacing */
+font-size: 16px; /* Make text larger for better readability */
+}
+
+.results-table {
+width: 100%; /* Make the table span the full width of its parent */
+border-collapse: collapse; /* Ensure proper spacing and borders */
+text-align: left; /* Align text for better readability */
+}
+
+.results-table th,
+.results-table td {
+padding: 10px; /* Add some padding for better spacing */
+border: 1px solid #ddd; /* Add a border for clarity */
+}
+
+.results-table th {
+background-color: #f4f4f4; /* Add a subtle background for headers */
+font-weight: bold;
+}
+#page-wrapper {
+width: 90%; /* Adjust the width as needed */
+margin: 0 auto; /* Center the wrapper horizontally */
+background-color: #fff; /* Optional: Add a background for contrast */
+padding: 20px; /* Add padding for spacing */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+
+
+#artist-tracks {
+width: 100%; /* Ensure it spans the full width */
+margin: 20px auto; /* Center it horizontally */
+}
+
+.results-table {
+width: 100%; /* Ensure the table spans the full width */
+margin: 0 auto; /* Center the table */
+border-collapse: collapse; /* Ensure proper spacing and borders */
+text-align: left; /* Align text for better readability */
+}
+
+.results-table th,
+.results-table td {
+padding: 10px; /* Add some padding for better spacing */
+border: 1px solid #ddd; /* Add a border for clarity */
+}
+
+.results-table th {
+background-color: #f4f4f4; /* Subtle header background */
+font-weight: bold;
+}
+
+.results-table tr:nth-child(even) {
+background-color: #f9f9f9; /* Alternate row colors */
+}
+
+.results-table tr:hover {
+background-color: #f1f1f1; /* Add hover effect for clarity */
+}
+
+#page-wrapper {
+width: 90%; /* Adjust as needed */
+max-width: 1200px; /* Optional: limit max width */
+margin: 0 auto; /* Center the content */
+background-color: #fff; /* Optional: Add a background */
+padding: 20px; /* Add padding for spacing */
 }

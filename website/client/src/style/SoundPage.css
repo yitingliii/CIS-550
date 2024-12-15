@@ -1,0 +1,273 @@
+/* Scoped CSS for SoundPage */
+
+/* General Body Styling */
+/* Applies to the body and html elements to remove margin/padding 
+   and ensures full viewport height with a consistent blue background */
+body, 
+   #sound-page-wrapper html {
+     margin: 0;
+     padding: 0;
+     height: 100%;
+     background-color: #acc5ce; /* Blue background specific to this page */
+   }
+
+/* Sound Page Wrapper */
+/* The main container wrapping the entire page content */
+#sound-page-wrapper {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #acc5ce; /* Consistent blue background */
+  min-height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  flex-direction: column; /* Arranges children vertically */
+}
+
+/* Page Wrapper */
+/* Wrapper for the main content area to center everything */
+#sound-page-wrapper #page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  padding: 30px;
+  width: 100%;
+  min-height: 100vh; /* Ensures content fills the viewport */
+  box-sizing: border-box;
+  background-color: #acc5ce; /* Blue background */
+}
+
+/* Main Heading */
+/* Styles the main heading at the top of the page */
+#sound-page-wrapper h1 {
+  font-size: 3rem; /* Large font size */
+  color: #3b3b3b; /* Dark gray text */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  text-align: center;
+  margin: 0 auto 40px; /* Center with spacing below */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1.5px; /* Spacing between letters */
+  border-bottom: 4px solid #f8f8f8; /* Underline style */
+  display: block;
+  padding-bottom: 10px; /* Spacing below text */
+  width: 100%;
+}
+
+/* Subheading Styles */
+/* Styles for section headings (h2) */
+#sound-page-wrapper h2 {
+  font-size: 1.8rem;
+  color: #28504e; /* Dark greenish-gray */
+  font-family: 'Verdana', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: capitalize; /* Capitalize each word */
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0d0e1a; /* Thin underline */
+  display: inline-block; /* Inline style with block behavior */
+}
+
+/* Navigation Bar */
+/* Styles the top navigation bar */
+#sound-page-wrapper #navbar {
+  width: 100%;
+  background-color: #5d737e; /* Dark gray-blue background */
+  display: flex;
+  justify-content: center; /* Centers the links horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#sound-page-wrapper #navbar ul {
+  list-style-type: none; /* Removes list bullets */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
+#sound-page-wrapper #navbar li {
+  flex: 1; /* Equal width for each nav item */
+  text-align: center;
+}
+
+#sound-page-wrapper #navbar a {
+  display: block;
+  padding: 15px 0;
+  color: #ffffff; /* White text */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase nav links */
+  text-decoration: none;
+  background-color: #5d737e; /* Matches navbar background */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#sound-page-wrapper #navbar a:hover {
+  background-color: #444444; /* Darker background on hover */
+}
+
+/* Panels */
+/* Styles for the main content blocks (panels) */
+#sound-page-wrapper .panel {
+  flex: 1; /* Makes panels flexible */
+  background-color: #ffffff; /* White panel background */
+  padding: 20px; /* Padding inside the panel */
+  border-top: 1px solid #ccc; /* Top border */
+  border-right: 1px solid #ccc; /* Right border */
+  border-bottom: 1px solid #ccc; /* Bottom border */
+  border-left: none; /* No left border */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 0; /* Align panels seamlessly */
+  transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+}
+
+#sound-page-wrapper .panel:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Content Wrapper */
+/* Wrapper for all panels to arrange them */
+#sound-page-wrapper #content-wrapper {
+  display: flex;
+  flex-direction: row; /* Panels arranged horizontally */
+  justify-content: space-between; /* Space between panels */
+  width: 100%;
+  gap: 20px; /* Spacing between panels */
+  flex: 1;
+  background-color: transparent; /* No background color */
+  margin: 0;
+}
+
+/* Table Styling */
+/* Styles for tables within the panels */
+#sound-page-wrapper table {
+  width: 100%;
+  border-collapse: collapse; /* No spacing between table cells */
+}
+
+#sound-page-wrapper table th,
+#sound-page-wrapper table td {
+  padding: 12px;
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #754f4f; /* Row separator */
+}
+
+#sound-page-wrapper table th {
+  background-color: #679785; /* Greenish header background */
+  color: white; /* White text */
+  font-weight: bold;
+}
+
+#sound-page-wrapper table td {
+  background-color: #f9f9f9; /* Light gray for cells */
+}
+
+#sound-page-wrapper table tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+#sound-page-wrapper .table-section {
+  margin-bottom: 30px; /* Spacing below tables */
+}
+
+/* Pagination Controls */
+/* Styles for pagination buttons and text */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination-controls button {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+/* Control Row Styling */
+/* Styles for control rows (dropdowns and labels) */
+.control-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Spacing between elements */
+  margin: 10px 0;
+}
+
+.control-row label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333; /* Dark text */
+}
+
+.control-row select {
+  text-align: center;
+  text-align-last: center; /* Center text in dropdown */
+  width: auto;
+  min-width: 120px;
+  max-width: 160px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.control-row select:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Focus glow effect */
+}
+
+/* Media Queries for Small Screens */
+/* Adjusts layout for smaller screens */
+@media (max-width: 768px) {
+  #sound-page-wrapper #content-wrapper {
+    flex-direction: column; /* Stack panels vertically */
+  }
+
+  #sound-page-wrapper .panel {
+    margin-bottom: 20px; /* Add spacing below panels */
+  }
+}
+
+/* Style for the table container */
+.table-section {
+  margin-bottom: 40px;
+}
+
+/* Style for the audio feature table */
+.audio-feature-table {
+  width: 100%;
+  max-width: 600px; /* Match the width to the Mood Table */
+  margin: 0 auto; /* Center the table */
+}
+
+/* Style for the table itself */
+.audio-feature-results {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audio-feature-results th,
+.audio-feature-results td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .audio-feature-table {
+    max-width: 100%; /* Adjust width for smaller screens */
+  }
+}
