@@ -206,8 +206,6 @@ export default function SearchSong() {
                         "N/A"
                       )}
                     </td>
-                  <td>
-                  </td>
                   <td>{song.genre_name}</td>
                 </tr>
               ))}
