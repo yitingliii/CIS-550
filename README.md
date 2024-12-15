@@ -1,5 +1,6 @@
 # Melody Quest
 A website designed by Haorui, Yiting, Kris and Jason as Final Project for CIS 5500 Fall 2024. 
+(b.t.w To avoid overwriting important files during multi-user commits, the group first collects all changes into a zip file, and Yiting handles the final push to GitHub. While Yiting done most commits, it’s important to note that everyone inside this repo has made significant contributions to this repository.)
 
 ## Instruction
 To run the website, it is pretty much the same as Homework 3. 
