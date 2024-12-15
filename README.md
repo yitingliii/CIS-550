@@ -1,6 +1,7 @@
 # Melody Quest
-This is a website designed by Haorui, Yiting, Kris and Jason as Final Project for CIS 5500 Fall 2024. 
+A website designed by Haorui, Yiting, Kris and Jason as Final Project for CIS 5500 Fall 2024. 
 
+## Page Description
 This is a music search page for people to explore! 
 
 - Home Page: The home page is like the cover of our website. From the home page, the user can go to any page they are interested in.
@@ -12,3 +13,52 @@ The second part is search song by artist. By selecting the artist name from the 
 - The Sound Lab: The Sound Lab offers four interactive features for music exploration. The Dance section randomly generates five dance-friendly song recommendations, with a Refresh button to discover new ones. In Hit the Gym, users can select a genre and the desired number of top songs, displaying them in a table below. The How Are You Feeling? section lets users choose their mood and the number of rows displayed per page, with pagination controls to navigate through all available songs. Lastly, the Search Songs feature allows users to find music based on specific attributes such as Instrumentalness, Energy, Valence, Liveness, and Acousticness. By clicking the Search Song button, relevant songs are displayed, and the Clear Filter button resets all inputs for a fresh search experience.
 
 - Collaborative Creation: On this page, users can view songs collaborated on by two artists. The Add to Favorites button allows users to save songs to their favorites, while the Remove from Favorites button lets them delete songs from the list.
+
+
+## Project structure 
+This project is divided into client and server directories, organizing frontend and backend code separately.
+
+### 1. Client
+This directory contains the frontend code, built using React for the UI and CSS for styling.
+
+```plaintext
+client/
+├── node_modules/          
+├── public/                 
+├── src/                    
+│   ├── components/        
+│   ├── pages/              # Individual page components
+│   │   ├── album.js        
+│   │   ├── Collaboration.js 
+│   │   ├── GenrePage.js    
+│   │   ├── HomePage.js     
+│   │   ├── SearchPage.js   
+│   │   └── SoundPage.js   
+│   ├── style/              # CSS styles for the pages
+│   │   ├── Collaboration.css
+│   │   ├── GenrePage.css
+│   │   ├── HomePage.css
+│   │   ├── SearchPage.css
+│   │   └── SoundPage.css
+│   ├── App.js              
+│   ├── index.js            
+│   └── index.css           
+├── package.json            
+└── package-lock.json       
+
+```
+
+### 2. Server 
+This directory contains the backend code, built using Node.js and Express.
+
+```plaintext
+server/
+├── node_modules/           
+├── config.json             
+├── routes.js               # API endpoints for HTTP requests
+├── server.js               # Main backend server file
+├── package.json           
+└── package-lock.json      
+```
+
+Wish you enjoy!
