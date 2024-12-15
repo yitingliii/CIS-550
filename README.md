@@ -1,6 +1,20 @@
 # Melody Quest
 A website designed by Haorui, Yiting, Kris and Jason as Final Project for CIS 5500 Fall 2024. 
 
+## Instruction
+To run the website, it is pretty much the same as Homework 3. 
+1. Download the website directory.
+2. Put the directory into VS Code.
+3. In the terminal, do following commands:
+   - ```cd server```
+   - ``` npm install```
+   - ```npm start```
+4. Then open another terminal, do following commands:
+   - ```cd client```
+   - ``` npm install```
+   - ```npm start```
+5. At this time, the website should pop up on the default browser.
+
 ## Page Description
 This is a music search page for people to explore! 
 
