@@ -448,7 +448,11 @@ export default function MusicInsights() {
               <td>{song.title}</td>
               <td>
                 {song.url ? (
-                  <a href={song.url} target="_blank" rel="noopener noreferrer">
+                    <a
+                    href={`http://${song.url.startsWith("http") ? song.url.slice(7) : song.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Listen
                   </a>
                 ) : (
