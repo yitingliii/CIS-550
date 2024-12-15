@@ -1,6 +1,7 @@
 # Melody Quest
 A website designed by Haorui, Yiting, Kris and Jason as Final Project for CIS 5500 Fall 2024. 
-(b.t.w To avoid overwriting important files during multi-user commits, the group first collects all changes into a zip file, and Yiting handles the final push to GitHub. While Yiting done most commits, it’s important to note that everyone inside this repo has made significant contributions to this repository.)
+
+<br>(To avoid overwriting important files during multi-user commits, the group first collects all changes into a zip file, and Yiting handles the final push to GitHub. While Yiting done most commits, it’s important to note that everyone inside this repo has made significant contributions to this repository.) <br>
 
 ## Instruction
 To run the website, it is pretty much the same as Homework 3. 
@@ -8,11 +9,11 @@ To run the website, it is pretty much the same as Homework 3.
 2. Put the directory into VS Code.
 3. In the terminal, do following commands:
    - ```cd server```
-   - ``` npm install```
+   - ```npm install```
    - ```npm start```
 4. Then open another terminal, do following commands:
    - ```cd client```
-   - ``` npm install```
+   - ```npm install```
    - ```npm start```
 5. At this time, the website should pop up on the default browser.
 
